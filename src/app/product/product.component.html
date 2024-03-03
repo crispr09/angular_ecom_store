@@ -8,30 +8,10 @@
           <ul class="list-unstyled d-flex flex-md-row justify-content-center">
             <li>
               <a
-                href="#"
-                class="m-4 text-decoration-none text-danger fw-semibold"
-                >New Arrival</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="m-4 text-decoration-none fw-semibold text-black"
-                >Best Sellers</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="m-4 text-decoration-none fw-semibold text-black"
-                >Featured</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="m-4 text-decoration-none fw-semibold text-black"
-                >Special Offer</a
+                (click)="onCategoryClick(category.categoryId)"
+                *ngFor="let category of categoryList"
+                class="m-4 text-decoration-none text-danger fw-semibold text-black"
+                >{{ category.categoryName }}</a
               >
             </li>
           </ul>

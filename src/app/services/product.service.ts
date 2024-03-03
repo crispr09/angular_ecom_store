@@ -14,4 +14,16 @@ export class ProductService {
       Constants.API_END_POINT + Constants.METHODS.GET_ALL_PRODUCTS
     );
   }
+  getCategories(): Observable<any[]> {
+    return this.http.get<any[]>(
+      Constants.API_END_POINT + Constants.METHODS.GET_ALL_CATOGRY
+    );
+  }
+  getProductsByCategory(id: any): Observable<any[]> {
+    return this.http.get<any[]>(
+      Constants.API_END_POINT +
+        Constants.METHODS.GET_ALL_PRODUCTS_BY_CATEGORY +
+        id
+    );
+  }
 }

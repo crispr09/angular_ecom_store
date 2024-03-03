@@ -38,7 +38,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container">
       <!-- logo -->
-      <a class="navbar-brand fs-2 fw-bold" href="#">
+      <a class="navbar-brand fs-2 fw-bold" routerLink="/products">
         <i class="fa fa-cart-shopping fs-2" style="color: #f54242"></i
         ><span class="textBlur">Shopwise</span></a
       >
@@ -70,11 +70,25 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item">Fashion 1</a></li>
-              <li><a class="dropdown-item" href="#">Fashion 2</a></li>
-              <li><a class="dropdown-item" href="#">furniture 1</a></li>
-              <li><a class="dropdown-item" href="#">furniture 2</a></li>
-              <li><a class="dropdown-item" href="#">Electronics 1</a></li>
-              <li><a class="dropdown-item" href="#">Electronics 1</a></li>
+              <li>
+                <a class="dropdown-item" routerLink="/products">Fashion 2</a>
+              </li>
+              <li>
+                <a class="dropdown-item" routerLink="/products">furniture 1</a>
+              </li>
+              <li>
+                <a class="dropdown-item" routerLink="/products">furniture 2</a>
+              </li>
+              <li>
+                <a class="dropdown-item" routerLink="/products"
+                  >Electronics 1</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" routerLink="/products"
+                  >Electronics 1</a
+                >
+              </li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -260,3 +274,4 @@
     </div>
   </nav>
 </header>
+<router-outlet></router-outlet>

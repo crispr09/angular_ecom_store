@@ -12,5 +12,8 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
+  onRegister() {}
+  onLogin() {}
+  removeItem(arg0: any) {}
   title = 'store2-ecom';
 }

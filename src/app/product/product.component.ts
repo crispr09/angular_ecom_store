@@ -13,9 +13,11 @@ import { CommonModule } from '@angular/common';
 export class ProductComponent implements OnInit {
   onCategoryClick(id: any) {
     this.getProductsByCategory(id);
+    this.selectedCategory = id;
   }
   productList: any[] = [];
   categoryList: any[] = [];
+  selectedCategory: any = '';
   constructor(private prodSrrvice: ProductService) {}
   ngOnInit(): void {
     this.getProducts();

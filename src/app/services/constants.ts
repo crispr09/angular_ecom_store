@@ -6,5 +6,6 @@ export const Constants = {
     GET_ALL_PRODUCTS_BY_CATEGORY: 'product/category/',
     REGISTER_USER: 'user/register',
     LOGIN_USER: 'user/login',
+    ADD_TO_CART: 'cart/add?customerId=?id&productId=?productId',
   },
 };

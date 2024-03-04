@@ -40,4 +40,11 @@ export class ProductService {
       obj
     );
   }
+  addToCart(id: number, productId: number, obj: any): Observable<any> {
+    debugger;
+    return this.http.post(
+      Constants.API_END_POINT + Constants.METHODS.ADD_TO_CART + id + productId,
+      obj
+    );
+  }
 }

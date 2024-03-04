@@ -11,6 +11,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './product.component.css',
 })
 export class ProductComponent implements OnInit {
+  addToCart(arg0: any) {
+    throw new Error('Method not implemented.');
+  }
   onCategoryClick(id: any) {
     this.getProductsByCategory(id);
     this.selectedCategory = id;

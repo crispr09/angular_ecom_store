@@ -20,7 +20,7 @@ export class ProductComponent implements OnInit {
   selectedCategory: any = '';
   obj1: any;
   parseObj: any = {};
-  responseJson: any = {};
+  responseJson: any[] = [];
   constructor(private prodSrrvice: ProductService) {}
   ngOnInit(): void {
     this.getProducts();
@@ -53,8 +53,9 @@ export class ProductComponent implements OnInit {
     this.prodSrrvice
       .addToCart(this.parseObj.id, productId, this.obj1)
       .subscribe((res: any) => {
+        alert('product added success');
         debugger;
-        this.responseJson = res;
+        this.responseJson = res.products;
       });
   }
 }

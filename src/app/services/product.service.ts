@@ -43,7 +43,11 @@ export class ProductService {
   addToCart(id: number, productId: number, obj: any): Observable<any> {
     debugger;
     return this.http.post(
-      Constants.API_END_POINT + Constants.METHODS.ADD_TO_CART + id + productId,
+      Constants.API_END_POINT +
+        Constants.METHODS.ADD_TO_CART +
+        id +
+        '&productId=' +
+        productId,
       obj
     );
   }

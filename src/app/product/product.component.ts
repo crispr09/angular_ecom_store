@@ -11,9 +11,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './product.component.css',
 })
 export class ProductComponent implements OnInit {
-  addToCart(arg0: any) {
-    throw new Error('Method not implemented.');
-  }
   onCategoryClick(id: any) {
     this.getProductsByCategory(id);
     this.selectedCategory = id;
@@ -21,6 +18,9 @@ export class ProductComponent implements OnInit {
   productList: any[] = [];
   categoryList: any[] = [];
   selectedCategory: any = '';
+  obj1: any;
+  parseObj: any = {};
+  responseJson: any = {};
   constructor(private prodSrrvice: ProductService) {}
   ngOnInit(): void {
     this.getProducts();
@@ -42,5 +42,19 @@ export class ProductComponent implements OnInit {
     this.prodSrrvice.getProductsByCategory(id).subscribe((res: any) => {
       this.productList = res;
     });
+  }
+
+  addToCart(productId: any) {
+    const localData = localStorage.getItem('amazon_user');
+
+    if (localData != null) {
+      this.parseObj = JSON.parse(localData);
+    }
+    this.prodSrrvice
+      .addToCart(this.parseObj.id, productId, this.obj1)
+      .subscribe((res: any) => {
+        debugger;
+        this.responseJson = res;
+      });
   }
 }

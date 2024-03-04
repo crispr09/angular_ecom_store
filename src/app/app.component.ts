@@ -4,11 +4,12 @@ import { LandingComponent } from './landing/landing.component';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ProductService } from './services/product.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LandingComponent, FormsModule],
+  imports: [RouterOutlet, LandingComponent, FormsModule, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -23,7 +24,15 @@ export class AppComponent {
     userName: '1234',
     password: 'sach2',
   };
-  constructor(private prodSrrvice: ProductService) {}
+  userData: any = {};
+  constructor(private prodSrrvice: ProductService) {
+    const localData = localStorage.getItem('amazon_user');
+    if (localData != null) {
+      const parseObj = JSON.parse(localData);
+      this.userData = parseObj;
+      // this.getCartData(this.userData.custId)
+    }
+  }
   onRegister() {
     this.prodSrrvice.register(this.registerObj).subscribe((res: any) => {
       debugger;
@@ -40,7 +49,8 @@ export class AppComponent {
     this.prodSrrvice.login(this.loginObj).subscribe((res: any) => {
       debugger;
       if (res) {
-        this.loginObj = res.data;
+        this.userData = res;
+        localStorage.setItem('amazon_user', JSON.stringify(res));
         alert('User login Done');
       } else {
         alert('error login user');

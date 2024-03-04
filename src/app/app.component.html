@@ -357,7 +357,10 @@
                       class="form-control"
                       required
                     />
-                    <label class="form-control-placeholder" for="username"
+                    <label
+                      class="form-control-placeholder"
+                      for="username"
+                      [(ngModel)]="loginObj.userName"
                       >Username</label
                     >
                   </div>
@@ -369,7 +372,10 @@
                       class="form-control"
                       required
                     />
-                    <label class="form-control-placeholder" for="password"
+                    <label
+                      class="form-control-placeholder"
+                      for="password"
+                      [(ngModel)]="loginObj.password"
                       >Password</label
                     >
                     <span
@@ -434,15 +440,27 @@
         <div class="container">
           <div class="row">
             <div class="col-12 my-2">
-              <input type="text" class="form-control" />
+              <input
+                type="text"
+                [(ngModel)]="registerObj.userName"
+                class="form-control"
+              />
               <label for="">Set Username</label>
             </div>
             <div class="col-12 my-2">
-              <input type="password" class="form-control" />
+              <input
+                type="password"
+                [(ngModel)]="registerObj.password"
+                class="form-control"
+              />
               <label for="">Set Password</label>
             </div>
             <div class="col-12 my-2">
-              <input type="number" class="form-control" />
+              <input
+                type="number"
+                [(ngModel)]="registerObj.mobile"
+                class="form-control"
+              />
               <label for="">Conatct Number</label>
             </div>
           </div>

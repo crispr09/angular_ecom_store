@@ -26,4 +26,18 @@ export class ProductService {
         id
     );
   }
+  register(obj: any): Observable<any> {
+    debugger;
+    return this.http.post(
+      Constants.API_END_POINT + Constants.METHODS.REGISTER_USER,
+      obj
+    );
+  }
+  login(obj: any): Observable<any> {
+    debugger;
+    return this.http.post(
+      Constants.API_END_POINT + Constants.METHODS.LOGIN_USER,
+      obj
+    );
+  }
 }

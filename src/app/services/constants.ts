@@ -4,5 +4,7 @@ export const Constants = {
     GET_ALL_PRODUCTS: 'product',
     GET_ALL_CATOGRY: 'category',
     GET_ALL_PRODUCTS_BY_CATEGORY: 'product/category/',
+    REGISTER_USER: 'user/register',
+    LOGIN_USER: 'user/login',
   },
 };
